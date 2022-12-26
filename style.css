@@ -25,6 +25,38 @@
     padding: 10px 5px;
     border-bottom: 1px solid black;
 }
+
+.left-div{
+    display: flex;
+    gap: 5px;
+}
+
+.change-btn{
+    margin-right: 5px;
+}
+.cancel-btn{
+    margin-right: 5px;
+}
+
+.todo-input{
+    display: flex;
+    padding: 10px 5px;
+    border-bottom: 1px solid black;
+}
+
+.todo-input input{
+    width: 100%;
+    margin-right: 5px;
+}
+
+.todo-input button{
+    width: 30px;
+}
+
+.todo button{
+    width: 30px;
+}
+
 .text-completed{
     color: gray;
     text-decoration: line-through;

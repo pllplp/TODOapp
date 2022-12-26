@@ -44,22 +44,25 @@ const createTodo = (todo) => {
   text.textContent = todo.title
 
   const changeBtn = document.createElement('button')
-  changeBtn.textContent = 'C'
   changeBtn.className = 'change-btn'
   changeBtn.onclick = () => {
     TodoOnEditStatus(todo.id)
   }
+  const penImage = document.createElement('i')
+  penImage.classList.add('fa-solid', 'fa-pen')
+  changeBtn.append(penImage)
 
   const deleteBtn = document.createElement('button')
-  deleteBtn.textContent = 'D'
+  deleteBtn.className = 'delete-btn'
   deleteBtn.onclick = () => {
     deleteTodo(todo.id)
   }
-  deleteBtn.className = 'delete-btn'
+  const trashImage = document.createElement('i')
+  trashImage.classList.add("fa-solid", "fa-trash")
+  deleteBtn.append(trashImage)
 
   leftDiv.append(inputCheck, text)
   rightDiv.append(changeBtn, deleteBtn)
-
   div.append(leftDiv, rightDiv)
   document.querySelector('.container').append(div)
 }
@@ -75,18 +78,23 @@ const changeTodoText = (todo) => {
   input.setAttribute('type', 'input')
 
   const applyBtn = document.createElement('button')
-  applyBtn.textContent = 'apply'
   applyBtn.className = 'apply-btn'
   applyBtn.onclick = (event) => {
-    applyChangeText(event.path[1].children[0].value, todo.id)
+    applyChangeText(input.value, todo.id)
   }
+  const checkImage = document.createElement('i')
+  checkImage.classList.add("fa-solid", "fa-check")
+  applyBtn.append(checkImage)
+
 
   const cancelBtn = document.createElement('button')
-  cancelBtn.textContent = 'cancel'
   cancelBtn.className = 'cancel-btn'
   cancelBtn.onclick = (event) => {
     applyChangeText(inputText, todo.id)
   }
+  const xmarkImage = document.createElement('i')
+  xmarkImage.classList.add("fa-solid", "fa-xmark")
+  cancelBtn.append(xmarkImage)
  
   div.append(input, cancelBtn, applyBtn)
   document.querySelector('.container').append(div)
