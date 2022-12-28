@@ -160,6 +160,12 @@ const applyChangeText = (text, id) => {
   console.log(changingTodo);
 }
 
+document.querySelector('.add-btn').addEventListener('click', (e) => {
+    addTodo(document.querySelector('.add-input').value)
+    renderTodos()
+    document.querySelector('.add-input').value = ''
+})
+
 document.querySelector('.add-input').addEventListener('keydown', (e) => {
   if(e.key == 'Enter'){
     addTodo(e.path[0].value)
